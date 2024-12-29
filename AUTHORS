@@ -1,0 +1,1 @@
+Library Carpentry is authored and maintained by the [community](https://github.com/data-lessons/dh-openrefine/network/members).

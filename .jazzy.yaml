@@ -1,0 +1,80 @@
+output: .docs
+sdk: ios
+author: Asana, Inc.
+author_url: https://asana.com
+module: Drawsana
+copyright: 2018 [Asana, Inc.](https://asana.com)
+readme: Readme.md
+github_url: https://github.com/Asana/Drawsana
+github_file_prefix: https://github.com/Asana/Drawsana/tree/master
+skip_undocumented: false
+undocumented_text: ""
+
+xcodebuild_arguments: ["-project", "Drawsana.xcodeproj", "-target", "Drawsana"]
+
+custom_categories:
+- name: UI
+  children:
+  - DrawsanaView
+  - DrawsanaViewDelegate
+  - DrawsanaViewShapeUpdating
+- name: Data model
+  children:
+  - Drawing
+  - DrawingOperation
+  - DrawingOperationStack
+  - DrawingOperationStackDelegate
+  - ToolOperationContext
+  - ToolSettings
+  - UserSettings
+- name: Shape building blocks
+  children:
+  - Shape
+  - ShapeTransform
+  - ShapeWithBoundingRect
+  - ShapeWithTransform
+  - ShapeSelectable
+  - ShapeWithStandardState
+  - ShapeWithStrokeState
+  - ShapeWithTwoPoints
+  - ShapeWithThreePoints
+- name: Tool building blocks
+  children:
+  - DrawingTool
+  - DrawingToolForShapeWithTwoPoints
+  - DrawingToolForShapeWithThreePoints
+- name: Shape implementations
+  children:
+  - AngleShape
+  - EllipseShape
+  - LineShape
+  - NgonShape
+  - PenShape
+  - PenLineSegment
+  - RectShape
+  - StarShape
+  - TextShape
+- name: Tool implementations
+  children:
+  - AngleTool
+  - ArrowTool
+  - EllipseTool
+  - EraserTool
+  - LineTool
+  - PenTool
+  - PentagonTool
+  - RectTool
+  - SelectionTool
+  - SelectionToolDelegate
+  - StarTool
+  - TextTool
+  - TextToolDelegate
+  - TextShapeEditingView
+  - TriangleTool
+- name: Operations
+  children:
+  - AddShapeOperation
+  - RemoveShapeOperation
+  - ChangeTransformOperation
+  - EditTextOperation
+  - ChangeExplicitWidthOperation

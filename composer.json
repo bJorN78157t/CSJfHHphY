@@ -1,0 +1,56 @@
+{
+    "name": "magepal/magento2-googletagmanager",
+    "description": "Google Tag Manager (GTM) for Magento 2 with Advance Data Layer",
+    "keywords": [
+        "magento 2",
+        "gtm",
+        "google tag manager",
+        "ga",
+        "data layer",
+        "magento2",
+        "tag Manager",
+        "google analytics",
+        "magento gtm",
+        "magento2 analytics",
+        "ga tag manager",
+        "magento tag manager",
+        "integrate gtm magento",
+        "order conversion gtm magento"
+    ],
+    "license": [
+        "proprietary"
+    ],
+    "homepage": "https://www.magepal.com/google-tag-manager.html",
+    "support": {
+        "email": "support@magepal.com",
+        "issues": "https://github.com/magepal/magento2-google-tag-manager/issues/"
+    },
+    "authors": [
+        {
+            "name": "Renon Stewart",
+            "email": "renon@magepal.com",
+            "homepage": "https://www.magepal.com/",
+            "role": "Leader"
+        }
+    ],
+    "require": {
+        "php": "~7.3.0|~7.4.0|~8.1.0|~8.2.0|~8.3.0",
+        "magento/module-backend": "102.0.*",
+        "magento/framework": "103.0.*",
+        "magepal/magento2-core": ">=1.1.11"
+    },
+    "suggest" : {
+        "magepal/magento2-enhanced-ecommerce": "Get more from Google Tag Manager with Enhanced E-commerce. Learn more at https://www.magepal.com/enhanced-ecommerce-for-google-tag-manager.html",
+        "magepal/magento2-google-analytics4": "Prepare for the future with Google Analytics 4. Learn more at https://www.magepal.com/google-analytics-4-for-google-tag-manager.html"
+    },
+    "type": "magento2-module",
+    "version": "3.0.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MagePal\\GoogleTagManager\\": ""
+        }
+    }
+}

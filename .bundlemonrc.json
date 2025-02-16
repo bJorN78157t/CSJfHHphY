@@ -1,0 +1,71 @@
+{
+  "baseDir": "./@ngxs/store/",
+  "defaultCompression": "none",
+  "includeCommitMessage": true,
+  "files": [
+    {
+      "path": "./fesm2022/ngxs-store-experimental.mjs",
+      "maxSize": "2kB",
+      "maxPercentIncrease": 0.5
+    },
+    {
+      "path": "./fesm2022/ngxs-store-internals-testing.mjs",
+      "maxSize": "7kB",
+      "maxPercentIncrease": 0.5
+    },
+    {
+      "path": "./fesm2022/ngxs-store-internals.mjs",
+      "maxSize": "13kB",
+      "maxPercentIncrease": 0.5
+    },
+    {
+      "path": "./fesm2022/ngxs-store-operators.mjs",
+      "maxSize": "7kB",
+      "maxPercentIncrease": 0.5
+    },
+    {
+      "path": "./fesm2022/ngxs-store-plugins.mjs",
+      "maxSize": "3kB",
+      "maxPercentIncrease": 0.5
+    },
+    {
+      "path": "./fesm2022/ngxs-store.mjs",
+      "maxSize": "105kB",
+      "maxPercentIncrease": 0.5
+    }
+  ],
+  "groups": [
+    {
+      "friendlyName": "@ngxs/store(fesm2022)",
+      "path": "./fesm2022/*.mjs",
+      "maxPercentIncrease": 1
+    },
+    {
+      "friendlyName": "@ngxs/store(esm2022)",
+      "path": "./esm2022/**/*.mjs",
+      "maxPercentIncrease": 1
+    },
+    {
+      "friendlyName": "@ngxs/store(fesm2022)[gzip]",
+      "path": "./fesm2022/*.mjs",
+      "maxPercentIncrease": 1,
+      "compression": "gzip"
+    },
+    {
+      "friendlyName": "@ngxs/store(esm2022)[gzip]",
+      "path": "./esm2022/**/*.mjs",
+      "maxPercentIncrease": 1,
+      "compression": "gzip"
+    }
+  ],
+  "reportOutput": [
+    [
+      "github",
+      {
+        "checkRun": false,
+        "commitStatus": true,
+        "prComment": true
+      }
+    ]
+  ]
+}

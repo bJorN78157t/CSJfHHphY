@@ -1,0 +1,4 @@
+services:
+  test:
+    build: .
+    entrypoint: ["/run-tests.sh"]

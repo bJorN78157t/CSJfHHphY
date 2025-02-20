@@ -1,0 +1,14 @@
+{
+  exclude_paths:
+    [
+      '**/node_modules/**',
+      'configs/**',
+      'scripts/**',
+      'tools/**',
+      '**/__tests__/**',
+      '.github/**',
+      '.eslintrc.js',
+      'jest.config.js',
+      '*.md',
+    ],
+}

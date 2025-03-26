@@ -1,0 +1,67 @@
+{
+    "name": "str('example')",
+    "gpu_id": "int(0)",
+    "dataset": {
+        "cub": {
+            "classes": {
+                "train": "range(0, 100)",
+                "eval": "range(100, 200)"
+            },
+            "root": "str('/export/home/vtschern/data/cub-200-2011')"
+        },
+        "cars": {
+            "classes": {
+                "train": "range(0, 98)",
+                "eval": "range(98, 196)"
+            },
+            "root": "str('/export/home/vtschern/data/cars196')"
+        },
+        "sop": {
+            "classes": {
+                "train": "range(0, 11318)",
+                "eval": "range(11318, 22634)"
+            },
+            "root": "str('/export/home/vtschern/data/sop')"
+        }
+    },
+    "transform_parameters": {
+        "rgb_to_bgr": "True", 
+        "intensity_scale": "[[0, 1], [0, 255]]",
+        "mean": "[104, 117, 128]",
+        "std": "[1, 1, 1]"
+    },
+    "criterion": {
+        "type": "proxynca.ProxyNCA",
+        "args": {
+            "smoothing_const": "0.1",
+            "scaling_x": "1",
+            "scaling_p": "8"
+        }
+    },
+    "lr_scheduler": {
+        "type": "torch.optim.lr_scheduler.ExponentialLR",
+        "args": {
+            "gamma": "0.94"
+        }
+    },
+    "opt": {
+        "type": "torch.optim.Adam",
+        "args": {
+            "embedding": {
+                "weight_decay": "0.0"
+            },
+            "backbone": {
+                "weight_decay": "0.0"
+            },
+            "proxynca": {
+                "weight_decay": "0.0",
+                "lr": "5.0"
+            },
+            "base": {
+                "lr": "0.045",
+                "lr": "0.045",
+                "eps": "1.0"
+            }
+        }
+    }
+}

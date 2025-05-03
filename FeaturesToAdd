@@ -1,0 +1,71 @@
+Features To Add-
+------------------------------------------------------------------------
+=Installation/ Maintenance 
+  X Update to Raspberry PI OS
+  X Simple script to run for installation.
+  - Script To Add and Maintain various Content Libraries (pg, archive.org collections, wikipedia). 
+  - Update/Upgrade when internet connection is detected.
+  - Ability to easily add to the playlist for the web based player
+  - Get the installer to change the default passowrd in start.sh for VLC server
+  x Add VOIP server (mumble) to the autoinstall scripts
+  - A better description of services offered from the landing page
+     X - link to wikimedia
+     x - link to web based irc
+     x - link to the file share
+     x - link to the VOIP (mumble) server
+     x - link to the audio stream (http://10.11.91.1:8085 using vlc or any streaming app)
+     - - link to the audio stream manager (10.11.91.1:8088) 
+  
+
+=Networking
+- Ability to Stat/Change to conect to existing networks
+   - Turn off dhcpd
+   - if via ethernet then DHCP
+   - if via wifi then select ssid and auth then dhcp
+   turn on auto discovery and advertize
+- 2nd wifi device setup for back haul/mesh/etc 
+
+=Security
+- All Logs to /dev/null  - no user info or activity 
+- Make all content directories to be ReadOnly 
+   - Add an option for user Upload area away from RO content
+- Ability to change MAC address   (https://bbs.nextthing.co/t/change-wifi-mac-address/6273/7)
+- An Emergency Scrub method 
+- Harden 
+   -disable root password and console access
+	     sudo passwd -l root
+	     sudo sh -c "echo > /etc/securetty"
+   -disable ssh access for root user
+   -disable ports
+   -readonly as much as possible
+
+
+=Services/Content To Add
+  - Localized Khan Academy  - http://ka-lite.readthedocs.io/en/0.16.x/index.html
+  - Updated PG - https://www.gutenberg.org/wiki/Gutenberg:The_CD_and_DVD_Project
+  - LibriVox - https://librivox.org/
+  - NumberStation (run a number station to send private msgs) - https://linuxcoffee.com/numbers/
+  X Web Based Audio Player so the user can listen to an m3u in the browser from the landing page  (http://tomwsmf.com/blog/)
+  - Emularity baked in, mame/dosbox/amiga with abiity to add roms/software https://github.com/db48x/emularity
+  
+=Power Saving
+  - On PI's turn off HDMI port 
+       Add line  /usr/bin/tvservice -o  to  /etc/rc.local to have HDMI turned off at bootup. 
+         -p to reenable
+  - Turn off the LEDs
+      On PI 0's
+         echo none | sudo tee /sys/class/leds/led0/trigger
+         echo 1 | sudo tee /sys/class/leds/led0/brightness
+         To /boot/config.txt add
+	    dtparam=act_led_trigger=none 
+            dtparam=act_led_activelow=on
+      On PI's other
+        echo gpio | sudo tee /sys/class/leds/led1/trigger
+	echo 0 | sudo tee /sys/class/leds/led1/brightness
+	to /boot/config.txt add
+            dtparam=act_led_trigger=none
+            dtparam=act_led_activelow=off
+            dtparam=pwr_led_trigger=none
+            dtparam=pwr_led_activelow=off
+      
+      
